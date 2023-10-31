@@ -16,13 +16,14 @@
         .menu {
             position: fixed;
             top: 0;
-            left: -270px; /* Increased the sidebar width */
+            left: -270px; /* Start with the menu hidden on the left */
             background-color: #333;
             color: #fff;
-            width: 270px; /* Adjusted the width */
+            width: 270px;
             height: 100%;
             padding: 20px 0;
             transition: left 0.3s; /* Add smooth transition */
+            overflow-y: scroll; /* Add a scrollbar to the menu */
         }
 
         .menu a {
@@ -37,6 +38,15 @@
             background-color: #555;
         }
 
+        .menu .menu-item {
+            padding: 10px 20px;
+            transition: background-color 0.2s; /* Add smooth background color transition */
+        }
+
+        .menu .menu-item:hover {
+            background-color: #555;
+        }
+
         .content {
             margin-left: 0;
             padding: 20px;
@@ -45,16 +55,17 @@
 
         .hamburger {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 10px;
+            left: 10px; /* Move the hamburger button to the left */
             background-color: #333;
             color: #fff;
-            width: 50px;
-            height: 100%;
+            width: 30px;
+            height: 30px;
             text-align: center;
+            line-height: 30px;
             font-size: 20px;
-            padding-top: 20px;
             cursor: pointer;
+            z-index: 1; /* Ensure it's above the content */
         }
 
         h1 {
@@ -63,41 +74,39 @@
     </style>
 </head>
 <body>
-    <div class="menu">
-        <a href="index.html">About Me</a>
-        <a href="cv.html">CV</a>
-        <a href="publications.html">Publications</a>
-        <a href="books.html">Books</a>
-        <a href="workshop-and-conference.html">Workshop and Conference</a>
-        <a href="presentations.html">Presentations</a>
-        <a href="fdp.html">Faculty Development Programs (FDP)</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="tools.html">Tools and Databases</a>
-        <a href="courses.html">Courses Created</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="industry.html">Industrial Experience</a>
-        <a href="blog.html">Blog</a>
-        <a href="experience.html">Experience & References Letters</a>
-        <a href="contact.html">Contact</a>
+    <div class="menu" id="menu">
+        <div class="menu-item"><a href="index.html">About Me</a></div>
+        <div class="menu-item"><a href="cv.html">CV</a></div>
+        <div class="menu-item"><a href="publications.html">Publications</a></div>
+        <div class="menu-item"><a href="books.html">Books</a></div>
+        <div class="menu-item"><a href="workshop-and-conference.html">Workshop and Conference</a></div>
+        <div class="menu-item"><a href="presentations.html">Presentations</a></div>
+        <div class="menu-item"><a href="fdp.html">Faculty Development Programs (FDP)</a></div>
+        <div class="menu-item"><a href="certifications.html">Certifications</a></div>
+        <div class="menu-item"><a href="tools.html">Tools and Databases</a></div>
+        <div class="menu-item"><a href="courses.html">Courses Created</a></div>
+        <div class="menu-item"><a href="teaching.html">Teaching</a></div>
+        <div class="menu-item"><a href="industry.html">Industrial Experience</a></div>
+        <div class="menu-item"><a href="blog.html">Blog</a></div>
+        <div class="menu-item"><a href="experience.html">Experience & References Letters</a></div>
+        <div class="menu-item"><a href="contact.html">Contact</a></div>
     </div>
-    <div class="content">
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <div class "content">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#8801;</div>
         <h1>Welcome to My GitHub Website</h1>
     </div>
 
     <script>
         function toggleMenu() {
-            var menu = document.querySelector('.menu');
+            var menu = document.getElementById('menu');
             var content = document.querySelector('.content');
             var button = document.querySelector('.hamburger');
             if (menu.style.left === '-270px') {
                 menu.style.left = '0';
                 content.style.marginLeft = '270px';
-                button.style.left = '270px';
             } else {
                 menu.style.left = '-270px';
                 content.style.marginLeft = '0';
-                button.style.left = '0';
             }
         }
     </script>
