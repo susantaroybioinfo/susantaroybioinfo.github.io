@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susanta Roy - Interactive GitHub Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -270px; /* Start with the menu hidden */
+            background-color: #333;
+            color: #fff;
+            width: 270px;
+            height: 100%;
+            padding: 20px 0;
+            transition: right 0.3s; /* Add smooth transition */
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        .content {
+            margin-right: 0;
+            padding: 20px;
+            transition: margin-right 0.3s; /* Add smooth transition */
+        }
+
+        .hamburger {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1; /* Ensure it's above the content */
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <a href="index.html">About Me</a>
+        <a href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+        <!-- Add more menu items here -->
+    </div>
+    <div class="content">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#8801;</div>
+        <h1>Welcome to My GitHub Website</h1>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            var content = document.querySelector('.content');
+            var button = document.querySelector('.hamburger');
+            if (menu.style.right === '-270px') {
+                menu.style.right = '0';
+                content.style.marginRight = '270px';
+                button.style.right = '-270px';
+            } else {
+                menu.style.right = '-270px';
+                content.style.marginRight = '0';
+                button.style.right = '10px';
+            }
+        }
+    </script>
+</body>
+</html>

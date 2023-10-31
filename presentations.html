@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Susanta Roy - Interactive GitHub Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            background-color: #333;
+            color: #fff;
+            width: 270px;
+            height: 100%;
+            padding: 20px 0;
+            transition: 0.3s; /* Add smooth transition */
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        .content {
+            padding: 20px;
+            transition: margin-left 0.3s; /* Add smooth transition */
+        }
+
+        .hamburger {
+            position: fixed;
+            top: 10px;
+            background-color: #333;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1; /* Ensure it's above the content */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Media query for screens smaller than 768px (e.g., mobile devices) */
+        @media (max-width: 768px) {
+            .menu {
+                right: -270px;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+
+        /* Media query for screens larger than 768px (e.g., PCs or laptops) */
+        @media (min-width: 769px) {
+            .menu {
+                left: -270px;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <a href="index.html">About Me</a>
+        <a href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+        <a href="books.html">Books</a>
+        <a href="workshop-and-conference.html">Workshop and Conference</a>
+        <a href="presentations.html">Presentations</a>
+        <a href="fdp.html">Faculty Development Programs (FDP)</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="tools.html">Tools and Databases</a>
+        <a href="courses.html">Courses Created</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="industry.html">Industrial Experience</a>
+        <a href="blog.html">Blog</a>
+        <a href="experience.html">Experience & References Letters</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="content">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#8801;</div>
+        <h1>Welcome to My GitHub Website</h1>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            var content = document.querySelector('.content');
+            var button = document.querySelector('.hamburger');
+            if (window.innerWidth <= 768) {
+                if (menu.style.right === '-270px') {
+                    menu.style.right = '0';
+                    content.style.marginLeft = '270px';
+                } else {
+                    menu.style.right = '-270px';
+                    content.style.marginLeft = '0';
+                }
+            } else {
+                if (menu.style.left === '-270px') {
+                    menu.style.left = '0';
+                    content.style.marginLeft = '270px';
+                } else {
+                    menu.style.left = '-270px';
+                    content.style.marginLeft = '0';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

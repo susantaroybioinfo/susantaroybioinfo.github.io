@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Susanta Roy - Interactive GitHub Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -220px; /* Start with the menu hidden */
+            background-color: #333;
+            color: #fff;
+            width: 220px; /* Increased the width */
+            height: 100%;
+            padding: 20px 0;
+            transition: left 0.3s; /* Add smooth transition */
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            background-color: #555;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left 0.3s; /* Add smooth transition */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .menu-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">About Me</a>
+        <a href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+        <a href="books.html">Books</a>
+        <a href="workshop-and-conference.html">Workshop and Conference</a>
+        <a href="presentations.html">Presentations</a>
+        <a href="fdp.html">Faculty Development Programs (FDP)</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="tools.html">Tools and Databases</a>
+        <a href="courses.html">Courses Created</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="industry.html">Industrial Experience</a>
+        <a href="blog.html">Blog</a>
+        <a href="experience.html">Experience & References Letters</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="content">
+        <button class="menu-button" id="menuButton" onclick="toggleMenu()">&#9776;</button>
+        <h1>Welcome to My GitHub Website</h1>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            var content = document.querySelector('.content');
+            var button = document.querySelector('.menu-button');
+            if (menu.style.left === '-220px') {
+                menu.style.left = '0';
+                content.style.marginLeft = '220px'; /* Adjusted to 220px */
+                button.style.left = '220px'; /* Adjusted to 220px */
+            } else {
+                menu.style.left = '-220px';
+                content.style.marginLeft = '0';
+                button.style.left = '10px';
+            }
+        }
+    </script>
+</body>
+</html>
