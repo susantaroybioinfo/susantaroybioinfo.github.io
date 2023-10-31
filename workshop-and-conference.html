@@ -16,13 +16,14 @@
         .menu {
             position: fixed;
             top: 0;
-            right: -270px; /* Start with the menu hidden */
+            left: -270px; /* Start with the menu hidden on the left */
             background-color: #333;
             color: #fff;
             width: 270px;
             height: 100%;
             padding: 20px 0;
-            transition: right 0.3s; /* Add smooth transition */
+            transition: left 0.3s; /* Add smooth transition */
+            overflow-y: scroll; /* Add a scrollbar to the menu */
         }
 
         .menu a {
@@ -37,16 +38,25 @@
             background-color: #555;
         }
 
+        .menu .menu-item {
+            padding: 10px 20px;
+            transition: background-color 0.2s; /* Add smooth background color transition */
+        }
+
+        .menu .menu-item:hover {
+            background-color: #555;
+        }
+
         .content {
-            margin-right: 0;
+            margin-left: 0;
             padding: 20px;
-            transition: margin-right 0.3s; /* Add smooth transition */
+            transition: margin-left 0.3s; /* Add smooth transition */
         }
 
         .hamburger {
             position: fixed;
             top: 10px;
-            right: 10px;
+            left: 10px; /* Move the hamburger button to the left */
             background-color: #333;
             color: #fff;
             width: 30px;
@@ -65,23 +75,23 @@
 </head>
 <body>
     <div class="menu" id="menu">
-        <a href="index.html">About Me</a>
-        <a href="cv.html">CV</a>
-        <a href="publications.html">Publications</a>
-        <a href="books.html">Books</a>
-        <a href="workshop-and-conference.html">Workshop and Conference</a>
-        <a href="presentations.html">Presentations</a>
-        <a href="fdp.html">Faculty Development Programs (FDP)</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="tools.html">Tools and Databases</a>
-        <a href="courses.html">Courses Created</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="industry.html">Industrial Experience</a>
-        <a href="blog.html">Blog</a>
-        <a href="experience.html">Experience & References Letters</a>
-        <a href="contact.html">Contact</a>
+        <div class="menu-item"><a href="index.html">About Me</a></div>
+        <div class="menu-item"><a href="cv.html">CV</a></div>
+        <div class="menu-item"><a href="publications.html">Publications</a></div>
+        <div class="menu-item"><a href="books.html">Books</a></div>
+        <div class="menu-item"><a href="workshop-and-conference.html">Workshop and Conference</a></div>
+        <div class="menu-item"><a href="presentations.html">Presentations</a></div>
+        <div class="menu-item"><a href="fdp.html">Faculty Development Programs (FDP)</a></div>
+        <div class="menu-item"><a href="certifications.html">Certifications</a></div>
+        <div class="menu-item"><a href="tools.html">Tools and Databases</a></div>
+        <div class="menu-item"><a href="courses.html">Courses Created</a></div>
+        <div class="menu-item"><a href="teaching.html">Teaching</a></div>
+        <div class="menu-item"><a href="industry.html">Industrial Experience</a></div>
+        <div class="menu-item"><a href="blog.html">Blog</a></div>
+        <div class="menu-item"><a href="experience.html">Experience & References Letters</a></div>
+        <div class="menu-item"><a href="contact.html">Contact</a></div>
     </div>
-    <div class="content">
+    <div class "content">
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#8801;</div>
         <h1>Welcome to My GitHub Website</h1>
     </div>
@@ -91,12 +101,12 @@
             var menu = document.getElementById('menu');
             var content = document.querySelector('.content');
             var button = document.querySelector('.hamburger');
-            if (menu.style.right === '-270px') {
-                menu.style.right = '0';
-                content.style.marginRight = '270px';
+            if (menu.style.left === '-270px') {
+                menu.style.left = '0';
+                content.style.marginLeft = '270px';
             } else {
-                menu.style.right = '-270px';
-                content.style.marginRight = '0';
+                menu.style.left = '-270px';
+                content.style.marginLeft = '0';
             }
         }
     </script>
